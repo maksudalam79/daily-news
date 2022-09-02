@@ -1,0 +1,16 @@
+.nav {
+    margin-right: 75%;
+}
+
+.ul-container {
+    text-align: center;
+}
+
+
+.ul-container li {
+    display: inline;
+    padding: 10px;
+    text-align: center;
+
+
+}
