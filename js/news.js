@@ -59,7 +59,7 @@ const displayNewsDeatiles = news => {
                 </div>
                 
                 <div>
-                <label for="my-modal-3"class="btn btn-primary modal-button">View Detail</label>
+                <label for="my-modal-3" onclick=(${news_id}) class="btn btn-primary modal-button">View Detail</label>
                     </div>
                 
                 
@@ -72,6 +72,21 @@ const displayNewsDeatiles = news => {
 
 
 }
+const modalload = async (news_id) => {
+
+    const url = `https://openapi.programming-hero.com/api/news/${news_id}`
+    const res = await fetch(url)
+    const data = await res.json()
+    displayModalDeatiles(data.data)
+    console.log(data)
+}
+
+displayModalDeatiles = news_id => {
+    console.log(news_id)
+}
+
+
+modalload()
 
 
 
