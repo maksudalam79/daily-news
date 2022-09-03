@@ -34,21 +34,54 @@ const displayNewsDeatiles = news => {
     newsContainer.innerHTML = ""
     news.forEach(news1 => {
         console.log(news1)
+        const { thumbnail_url, title, details, img } = news1
+
         const div = document.createElement('div')
         div.classList.add('cardcontainer')
         div.classList.add('my-10')
         div.innerHTML = `
        
-            <img  src="${news1.thumbnail_url}" alt="Album">
+            <img  src="${thumbnail_url}" alt="Album">
        
             <div class="card-body m-5">
-                <h2 class="card-title">${news1.title}</h2>
-                    <p></p>
-                    <div class="card-actions justify-end">
-                    <button class="btn btn-primary">Listen</button>
+                <h2 class="card-title">${title}</h2>
+                    <p>${details.length > 200 ? details.slice(0, 200) + '...' : details}</p>
+
+                
+                <div class="flex flex-nowrap gap-x-60">
+                <div>
+                      <img class="h-12 w-12 border-solid border-2 rounded-full "  src="${news1.author.img}" alt="Album">
+                      <h1>${news1.author.name}</h1 >
+              </div >
+                 
+              <div>
+                <i class="fa-solid fa-eye">${news1.total_view}</i>
+                </div>
+                
+                <div>
+                       <button class="btn btn-primary">Listen</button>
                     </div>
-                    </div>
-        `
+                
+                
+                
+            </div >
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    `
         newsContainer.appendChild(div)
 
     })
