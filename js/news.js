@@ -25,7 +25,7 @@ const loadNewsDeatiles = async (id) => {
     const res = await fetch(url)
     const data = await res.json()
     displayNewsDeatiles(data.data)
-    // console.log(data)
+    console.log(data)
 }
 
 const displayNewsDeatiles = news => {
@@ -34,7 +34,7 @@ const displayNewsDeatiles = news => {
     newsContainer.innerHTML = ""
     news.forEach(news1 => {
         console.log(news1)
-        const { thumbnail_url, title, details, img } = news1
+        const { thumbnail_url, title, details } = news1
 
         const div = document.createElement('div')
         div.classList.add('cardcontainer')
@@ -59,33 +59,30 @@ const displayNewsDeatiles = news => {
                 </div>
                 
                 <div>
-                       <button class="btn btn-primary">Listen</button>
+                <label for="my-modal-3"class="btn btn-primary modal-button">View Detail</label>
                     </div>
                 
                 
                 
             </div >
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    `
+`
         newsContainer.appendChild(div)
 
     })
+
+
 }
+
+
+
+
+
+
+
+
+
+
+
 
 
 loadNewsDeatiles()
