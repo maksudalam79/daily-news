@@ -17,3 +17,7 @@
 
 
 }
+
+.cardcontainer {
+    display: flex;
+}
