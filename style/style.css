@@ -4,6 +4,9 @@
 
 .ul-container {
     text-align: center;
+    display: inline;
+    padding: 10px;
+    text-align: center;
 }
 
 

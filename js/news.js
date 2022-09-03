@@ -6,24 +6,17 @@ const newscatagoris = async () => {
 }
 
 const displayCategories = cata => {
-    console.log(cata)
+
     const navbarContainer = document.getElementById("navbar-Container");
-    const uniqeArray = []
-
-
     cata.forEach(catas => {
-
         const li = document.createElement('li')
+
         li.innerHTML = `
-        <a href="${catas.category_id}"></a>${catas.category_name}
+        <li><a>${catas.category_name}</a></li>
         `
         navbarContainer.appendChild(li)
 
     });
-
-
-
 }
-
 
 newscatagoris()
